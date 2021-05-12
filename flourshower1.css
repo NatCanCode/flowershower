@@ -35,7 +35,8 @@ button{
     border-radius: 5px;
     border: 1px solid #fcbc25;
     background-color: #FFEEC6;
-    padding: 1% 2% 1% 2%;
+    padding: .4% 3% .4% 3%;
+    /* padding: top right bottom left*/
     transition: background-color .5s;
     /* font-family: 'Italiana', serif; */
     font-family: 'Roboto', sans-serif;
@@ -224,86 +225,76 @@ a:hover {
     justify-content: flex-end;
 }
 
-
 /* FOOTER 1 */
-/* #footer1{
-    border: 3px solid green;
-    justify-content: space-between;
-} */
-#footer1 .logo{
-    border: 3px solid orange;
+footer{
+    padding-left: 5%;
+    padding-right: 5%;
 }
-#footer1 a{
+footer a{
     text-decoration: none;
     color: #0A0402;
+    margin-top: 8%;
     transition: color .5s;
 }
-#footer1 a:hover {
+footer a:hover {
     color: #fcbc25;
 }
-/* .collections{
-    flex-direction: column;
-    min-width: 100%;
-    justify-content: space-between;
-} */
-/* .right{
-    justify-content: flex-end;
-    border: 3px solid blue;
-} */
-#footer1 button{
-
-}
 .linkedin{
-    max-width: 5%;
+    max-width: 20%;
 }
 .twitter{
-    max-width: 5%;
+    max-width: 20%;
 }
-#socialmedia{
-    /* flex-direction: row;
-    justify-content: center;
-    align-items: center; */
-    border: 2px solid magenta;
-}
-
-
-/* FOOTER */
 footer{
-    border: 3px solid red;
     display: grid;
-    grid-gap: 10%;
+    grid-gap: 1%;
     min-width: 100vw;
-	/* min-height: 40vh; */
-	grid-template-columns: 1fr 1fr 1fr 1f;
-	grid-template-rows: 1fr 1f;
+	min-height: 40vh;
+    grid-row-gap: 1px #0A0402;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: 1fr 1px 1fr;
+    grid-template-areas:    
+    "logo logo . collections bakery button"
+    "line line line line line line"
+    "copyright copyright copyright . . socialmedia";
 }
-/* .block{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-} */
-#footer1 .logo{{
+.logo{
 	grid-area: logo;
+    align-self: flex-start;
 }
 .collections{
 	grid-area: collections;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
 }
 .bakery{
     grid-area: bakery;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
 }
-#footer1 button{
+.button{
     grid-area: button;
+    align-self: flex-start;
+    /* display: flex;
+    justify-content: space-around;
+    align-items: center; */
 }
-#footer2 p{
+.copyright{
     grid-area: copyright;
+    align-self: center;
 }
-#socialmedia{
+.socialmedia{
     grid-area: socialmedia;
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
-footer{
-    grid-template-areas: 
-    'logo collections bakery button'
-    'copyright socialmedia socialmedia socialmedia';
+.line{
+    grid-area: line;
+    background-color: #0A0402;
 }
 /* @media (max-width: 550px){
 	.container{
